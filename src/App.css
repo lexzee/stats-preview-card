@@ -8,9 +8,70 @@
 .App {
   display: flex;
   flex-direction: column;
+  width: 230px;
   max-width: 350px;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: .5rem;
+  margin: 1rem auto;
 }
 
+h1,h2,h3,p{
+  margin: 0;
+  font-size: 15px;
+  font-weight: normal;
+}
+.cardImg{
+  border-radius: .5rem .5rem 0 0;
+  background-color: hsl(277, 64%, 50%);
+}
 .image {
   width: 100%;
+  display: block;
+  border-radius: .5rem .5rem 0 0;
+  opacity: .5;
+}
+
+.cardBody{
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+.cardHeader{
+  padding: 1rem;
+  font-size: larger;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: -1.5rem;
+  margin-top: 1rem;
+}
+.headerSpan{
+  color: hsl(277, 64%, 61%);
+}
+.description{
+  font-weight: 400;
+  font-size: x-small;
+  color: hsla(0, 0%, 100%, 0.6);
+  margin: 1rem 1.5rem;
+  padding: .3rem;
+  line-height: 1.7;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.stat{
+  margin: .5rem;
+  font-family: 'Inter', sans-serif;
+}
+.statHead{
+  font-size: medium;
+  font-weight: 600;
+}
+.statDet{
+  font-size: .5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.6);
+  letter-spacing: 1.5px;
 }

@@ -2,11 +2,11 @@ import React from 'react'
 
 const Comp = ({head, det}) => {
   return (
-    <div className="comp">
-      <h2>
+    <div className="stat">
+      <h2 className='statHead'>
         {head}
       </h2>
-      <p>
+      <p className='statDet'>
         {det}
       </p>
     </div>

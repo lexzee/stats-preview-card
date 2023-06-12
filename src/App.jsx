@@ -42,14 +42,14 @@ function App({head, det}) {
         </div>
         <div className="cardBody">
           <div className="titleDesc">
-            <h className="cardHeader">
+            <h1 className="cardHeader">
               Get <span className="headerSpan">insights</span> that help your business grow.
-            </h>
+            </h1>
             <p className="description">
               Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
             </p>
           </div>
-          <div className="extras">
+          <div className="stats">
             {comps.map((item, key) => {
               return (
               <Comp key={key} head={item.head} det={item.det} />
@@ -60,7 +60,7 @@ function App({head, det}) {
       </div>
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
+        Coded by <a href="https://github.com/lexzee">Lexzee</a>.
       </div>
     </>
   )
