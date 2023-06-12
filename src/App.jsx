@@ -1,33 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Comp from './components/Comp'
+import imgMobile from './images/image-header-mobile.jpg'
+import imgDesktop from './images/image-header-desktop.jpg'
+import { useEffect, useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App({head, det}) {
+  const comps = [
+    {
+      head: "10k+",
+      det: "companies",
+    },
+    {
+      head: "314",
+      det: "templates",
+    },
+    {
+      head: "12M+",
+      det: "queries",
+    }
+  ];
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleView = () => {
+      setIsMobile(window.innerWidth < 780)
+    };
+    handleView();
+    window.addEventListener("resize", handleView);
+
+    return () => {
+      window.removeEventListener("resize", handleView);
+    }
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <div className="cardImg">
+          <img src={isMobile ? imgMobile : imgDesktop} alt="" className="image" />
+        </div>
+        <div className="cardBody">
+          <div className="titleDesc">
+            <h className="cardHeader">
+              Get <span className="headerSpan">insights</span> that help your business grow.
+            </h>
+            <p className="description">
+              Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </div>
+          <div className="extras">
+            {comps.map((item, key) => {
+              return (
+              <Comp key={key} head={item.head} det={item.det} />
+              )
+            })}
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
